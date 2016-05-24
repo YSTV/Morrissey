@@ -38,7 +38,7 @@ public class Main extends Command {
 				.setServerPassword(Main.logins.get("nickserv").get("pass"))
 				.addListener(new Main())
 				.addAutoJoinChannel("#general")
-				.setMessageDelay(10)
+				.setMessageDelay(0)
 				.setAutoReconnect(true);
 
 		for (Command listener : Commands.listeners) {
