@@ -7,6 +7,7 @@ import org.pircbotx.Configuration;
 import org.pircbotx.PircBotX;
 import org.pircbotx.cap.SASLCapHandler;
 import org.pircbotx.hooks.types.GenericMessageEvent;
+import org.pircbotx.UtilSSLSocketFactory;
 import org.yaml.snakeyaml.Yaml;
 
 import uk.co.ystv.ystvbot.commands.Command;
@@ -32,10 +33,11 @@ public class Main extends Command {
 				.setVersion("Best Rabbit")
 				.setAutoNickChange(true)
 				.setCapEnabled(true)
-				.addCapHandler(new SASLCapHandler(Main.logins.get("nickserv").get("user"), Main.logins.get("nickserv").get("pass")))
+				.setSocketFactory(new UtilSSLSocketFactory().trustAllCertificates())
+				.setServerHostname("ystv.irc.slack.com")
+				.setServerPassword(Main.logins.get("nickserv").get("pass"))
 				.addListener(new Main())
-				.setServerHostname("chat.freenode.net")
-				.addAutoJoinChannel("#YSTV")
+				.addAutoJoinChannel("#general")
 				.setMessageDelay(0)
 				.setAutoReconnect(true);
 
