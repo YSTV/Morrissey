@@ -28,18 +28,18 @@ public class Main extends Command {
 
 		Configuration.Builder<PircBotX> builder = new Configuration.Builder<PircBotX>()
 				.setName(name)
-                                .setRealName("Best Rabbit")
-                                .setLogin(name)
-                                .setVersion("Best Rabbit")
-                                .setAutoNickChange(true)
-                                .setCapEnabled(true)
-                                .setSocketFactory(new UtilSSLSocketFactory().trustAllCertificates())
-                                .setServerHostname("ystv.irc.slack.com")
-                                .setServerPassword(Main.logins.get("nickserv").get("pass"))
-                                .addListener(new Main())
-                                .addAutoJoinChannel("#general")
-                                .setMessageDelay(10)
-                                .setAutoReconnect(true);
+				.setRealName("Best Rabbit")
+				.setLogin(name)
+				.setVersion("Best Rabbit")
+				.setAutoNickChange(true)
+				.setCapEnabled(true)
+				.setSocketFactory(new UtilSSLSocketFactory().trustAllCertificates())
+				.setServerHostname("ystv.irc.slack.com")
+				.setServerPassword(Main.logins.get("nickserv").get("pass"))
+				.addListener(new Main())
+				.addAutoJoinChannel("#general")
+				.setMessageDelay(10)
+				.setAutoReconnect(true);
 
 		for (Command listener : Commands.listeners) {
 			builder.addListener(listener);
