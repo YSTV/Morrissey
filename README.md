@@ -18,3 +18,10 @@ Avaliable commands:
 !random <user> - Pretend to be helen
 !flooded - Has YSTV flooded yet?
 ```
+
+Installation
+============
+1) You'll need Maven installed.
+2) In the resources folder, edit IRC and DB account details in 'login.json'.
+3) Then 'mvn package'
+The user and pass for IRC gateway are available by logging in as Morrissey on Slack.
